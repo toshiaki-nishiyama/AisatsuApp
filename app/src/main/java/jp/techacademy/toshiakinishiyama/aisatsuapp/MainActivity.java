@@ -23,13 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 時刻に応じた挨拶を判断し、表示するためのボタン
+        // 時刻を設定するためのボタン
         Button button1 = (Button)findViewById(R.id.button1);
         button1.setOnClickListener(this);
-
-        // 時刻を設定するためのボタン
-        Button button2 = (Button)findViewById(R.id.button2);
-        button2.setOnClickListener(this);
 
         // 挨拶を表示するためのテキストビュー
         mTextView = (TextView)findViewById(R.id.textView);
@@ -42,14 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v)
     {
-        if(v.getId() == R.id.button1)
-        {
-            showAisatsu();
-        }
-        else if(v.getId() == R.id.button2)
-        {
-            showTimePickerDialog();
-        }
+        showTimePickerDialog();
     }
 
     private void showAisatsu()
@@ -80,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         // メンバ変数に保存
                         mHourOfDay = hourOfDay;
                         mMinute = minute;
+
+                        // 設定された時刻にあわせて挨拶を表示する
+                        showAisatsu();
                     }
                 },
                 13,         // 初期値（時間）

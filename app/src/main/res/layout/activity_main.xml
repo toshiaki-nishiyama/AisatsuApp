@@ -5,19 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    // 時刻に応じた挨拶を判断し、表示するためのボタン
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="BUTTON"
-        android:id="@+id/button1"/>
-
     // 時刻を設定するためのボタン
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TimePickerDialog"
-        android:id="@+id/button2"/>
+        android:id="@+id/button1"/>
 
     // 挨拶を表示するためのテキストビュー
     <TextView
